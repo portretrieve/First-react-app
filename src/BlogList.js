@@ -1,13 +1,16 @@
-const BlogList = (props) => {
-  const blogs = props.blogsArray;
+import { Link } from "react-router-dom";
+
+const BlogList = ({ blogsArray, title }) => {
   return (
     <div className="blog-list">
-      <h2>{props.title}</h2>
-      {blogs.map((blog) => {
+      <h2>{title}</h2>
+      {blogsArray.map((blog) => {
         return (
-          <div className="blog-preview">
-            <h2>{blog.title}</h2>
-            <p>Written by: {blog.author} </p>
+          <div className="blog-preview" key={blog.id}>
+            <Link to={`/blogs/${blog.id}`}>
+              <h2>{blog.title}</h2>
+              <p>Written by: {blog.author} </p>
+            </Link>
           </div>
         );
       })}

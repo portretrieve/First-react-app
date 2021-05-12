@@ -8,17 +8,23 @@
     color: #333;
 }
 
+body {
+    background: rgb(241, 244, 246);
+    box-sizing: border-box;
+}
+
 .navbar {
     padding: 20px;
     display: flex;
     align-items: center;
-    max-width: 600px;
+    max-width: 100%;
     margin: 0 auto;
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid #bb0944;
+    background: rgb(4, 38, 107);
 }
 
 .navbar h1 {
-    color: #f1356d;
+    color: #f2f2f2;
 }
 
 .navbar .links {
@@ -29,6 +35,7 @@
     margin-left: 16px;
     text-decoration: none;
     padding: 6px;
+    color: #f2f2f2;
 }
 
 .navbar a:hover {
@@ -58,4 +65,30 @@
     font-size: 20px;
     color: #f1356d;
     margin-bottom: 8px;
+}
+
+.blog-preview a {
+    text-decoration: none;
+}
+
+
+/* blog details page */
+
+.blog-details h2 {
+    font-size: 20px;
+    color: #f1356d;
+    margin-bottom: 10px;
+}
+
+.blog-details div {
+    margin: 20px 0;
+}
+
+.blog-details button {
+    background: #f1356d;
+    color: #fff;
+    border: 0;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
 }

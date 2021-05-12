@@ -1,20 +1,18 @@
-import { useState } from "react";
 import BlogList from "./BlogList";
+import useFetch from "./useFetch";
 
 const Home = () => {
 
-    const [blogs, setBlogs] = useState([
-      { title: 'My new website', body: 'lorem ipsum...', author: 'mario'},
-      { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi'},
-      { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario'},
-      { title: 'Web react top tips', body: 'lorem ipsum...', author: 'chandler'}
-    ]);
-  
+  const { data, ispending, error } = useFetch("http://localhost:8000/blogs");
+
   return (
     <div className="home">
-      <BlogList blogsArray = {blogs} title="All My Blogs!" />~
+      {error && <div>{ error}</div>}
+      {ispending && <div>Loading....</div>}
+      {data && <BlogList blogsArray={data} title="All My Blogs!" />}
     </div>
   );
 };
 
 export default Home;
+ 
